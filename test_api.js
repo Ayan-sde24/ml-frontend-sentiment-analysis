@@ -14,7 +14,7 @@ async function run() {
 
   console.log("\nTesting POST / ...");
   try {
-     const r2 = await fetch("https://ml-backend-sentiment-analysis.onrender.com/", {
+     const r2 = await fetch(`${import.meta.env.VITE_API_URL}/predict`, {
        method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify({text: "I love this app, it is amazing!"})
